@@ -40,6 +40,7 @@ const navigationStyles = css`
     display: flex;
     align-items: center;
     grid-gap: 10px;
+    margin-left: 15px;
   }
 
   span {
@@ -54,8 +55,8 @@ const smallButton = css`
   height: 35px;
   padding: 0 12px;
   color: rgb(255, 255, 255);
-  background: rgb(225, 98, 89);
-  border: 1px solid rgb(190, 86, 67);
+  background: rgb(58, 160, 218);
+  border: 1px solid rgb(48, 139, 191);
   box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
 `;
 
@@ -68,8 +69,8 @@ const mediumButton = css`
   padding: 0 20px;
   margin: 20px 0 30px 0;
   color: rgb(255, 255, 255);
-  background: rgb(225, 98, 89);
-  border: 1px solid rgb(190, 86, 67);
+  background: rgb(58, 160, 218);
+  border: 1px solid rgb(48, 139, 191);
   box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
 `;
 
@@ -82,18 +83,19 @@ const styledSection = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 150px 0;
+  margin: 170px 0;
 `;
 
 const sectionLeftContainer = css`
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-content: center;
+  align-content: center; */
+  margin: 20px 0 20px 0;
 
   h1 {
     font-size: 75px;
-    margin: 10px 0 0 0;
+    margin: 20px 0 0 0;
   }
 
   h2 {
@@ -128,7 +130,7 @@ const logosWrapperStyles = css`
   justify-content: space-between;
   height: 30px;
   width: 80%;
-  padding: 25px 0;
+  padding: 20px 0;
   background-color: #fffefc;
 
   img {
@@ -163,6 +165,73 @@ const imageContainer = css`
   img {
     max-width: 100%;
     border-radius: 12px;
+  }
+`;
+
+const testimonialsSection = css`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 120px;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 40px;
+    font-weight: 600;
+    max-width: 650px;
+    margin-bottom: 15px;
+  }
+
+  button {
+    color: rgb(4, 4, 4);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 35px;
+    padding: 0 12px;
+    background: transparent;
+    font-size: 15px;
+  }
+
+  img {
+    max-width: 400px;
+    margin: 0 80px;
+  }
+`;
+
+const peopleQuotes = css`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 60px;
+  margin-top: 60px;
+  margin-bottom: 100px;
+`;
+
+const individualTestimonial = css`
+  max-width: 550px;
+`;
+
+const personTestimonialQuote = css`
+  img {
+    max-height: 30px;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(128, 128, 128);
+  }
+`;
+
+const personTestimonialInfo = css`
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+
+  p {
+    margin-top: 0px;
+    color: rgba(0, 0, 0, 0.6);
   }
 `;
 
@@ -283,7 +352,117 @@ function App() {
             />
           </div>
         </section>
+
         <hr />
+
+        <section>
+          <div css={testimonialsSection}>
+            <div>
+              <div>
+                <h2>Used by the world’s most innovative teams</h2>
+                <button>Read all customer stories → </button>
+              </div>
+            </div>
+            <div>
+              <img
+                alt="team collaborating"
+                src="https://www.notion.so/cdn-cgi/image/w=3840,q=100/front-static/pages/product/teams.png"
+              />
+            </div>
+          </div>
+
+          <div css={peopleQuotes}>
+            <div css={individualTestimonial}>
+              <div css={personTestimonialQuote}>
+                <div>
+                  <img
+                    alt="lattice logo"
+                    src="https://www.notion.so/front-static/shared/logos/color/lattice.png"
+                  />
+                </div>
+                <div>
+                  <p>
+                    "Now people know that, if they're going to ask me a
+                    question, I probably put the answer in Notion."
+                  </p>
+                </div>
+              </div>
+              <div css={personTestimonialInfo}>
+                <div>
+                  <img
+                    alt="person sketch portrait"
+                    src="https://www.notion.so/cdn-cgi/image/w=3840,q=100/front-static/shared/people/emily-smith.png"
+                  />
+                </div>
+                <div>
+                  <span>Emily Smith</span>
+                  <p>Head of Customer Care</p>
+                </div>
+              </div>
+            </div>
+            <div css={individualTestimonial}>
+              <div css={personTestimonialQuote}>
+                <div>
+                  <img
+                    alt="Loom logo"
+                    src="https://www.notion.so/front-static/shared/logos/color/loom.png"
+                  />
+                </div>
+                <div>
+                  <p>
+                    "Notion continues to be the easiest way to get information
+                    centralized somewhere and shout it out to someone else. For
+                    us, that’s extremely important because half our team is
+                    remote."
+                  </p>
+                </div>
+              </div>
+              <div css={personTestimonialInfo}>
+                <div>
+                  <img
+                    alt="person sketch portrait"
+                    src="https://www.notion.so/cdn-cgi/image/w=3840,q=100/front-static/shared/people/vinay-hiremath.png"
+                  />
+                </div>
+                <div>
+                  <span>Vinay Hiremath</span>
+                  <p>Co-founder and Head of Engineering</p>
+                </div>
+              </div>
+            </div>
+            <div css={individualTestimonial}>
+              <div css={personTestimonialQuote}>
+                <div>
+                  <img
+                    alt="Figma logo"
+                    src="https://www.notion.so/front-static/shared/logos/color/figma.png"
+                  />
+                </div>
+                <div>
+                  <p>
+                    "Notion’s ease of use is one of its hallmarks. It helps you
+                    visually navigate content and remember where something is."
+                  </p>
+                </div>
+              </div>
+              <div css={personTestimonialInfo}>
+                <div>
+                  <img
+                    alt="person sketch portrait"
+                    src="https://www.notion.so/cdn-cgi/image/w=3840,q=100/front-static/shared/people/marie-szuts.png"
+                  />
+                </div>
+                <div>
+                  <span>Marie Szuts</span>
+                  <p>Head of People Ops</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
         <section css={centeredSection}>
           <div>
             <div>
