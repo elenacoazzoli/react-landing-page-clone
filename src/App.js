@@ -23,10 +23,11 @@ const navigationWrapStyles = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 60px;
   width: 100%;
   padding: 0 200px;
   background-color: #fffefc;
+  z-index: 100;
 `;
 const navigationStyles = css`
   display: flex;
@@ -36,15 +37,17 @@ const navigationStyles = css`
   font-size: 15px;
   font-weight: 500;
 
+  ul,
   nav {
     display: flex;
     align-items: center;
-    grid-gap: 10px;
-    margin-left: 15px;
+    grid-gap: 8px;
+    list-style-type: none;
   }
 
+  li,
   span {
-    padding: 0 15px 2px 15px;
+    padding: 0 10px 2px 10px;
   }
 `;
 
@@ -58,6 +61,7 @@ const smallButton = css`
   background: rgb(58, 160, 218);
   border: 1px solid rgb(48, 139, 191);
   box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
+  cursor: pointer;
 `;
 
 const mediumButton = css`
@@ -72,6 +76,7 @@ const mediumButton = css`
   background: rgb(58, 160, 218);
   border: 1px solid rgb(48, 139, 191);
   box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
+  cursor: pointer;
 `;
 
 const styledMain = css`
@@ -87,10 +92,6 @@ const styledSection = css`
 `;
 
 const sectionLeftContainer = css`
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: center; */
   margin: 20px 0 20px 0;
 
   h1 {
@@ -109,11 +110,6 @@ const sectionLeftContainer = css`
     font-size: 12px;
     color: #808080;
   }
-
-  /* &:hover {
-    h1 {
-      color: red;
-    } */
 `;
 
 const logosSectionStyled = css`
@@ -188,6 +184,11 @@ const testimonialsSection = css`
     padding: 0 12px;
     background: transparent;
     font-size: 15px;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(55, 53, 47, 0.08);
+    }
   }
 
   img {
@@ -275,11 +276,13 @@ function App() {
             <NotionLogo />
           </a>
           <nav>
-            <span>Product</span>
-            <span>Solutions</span>
-            <span>Resources</span>
-            <span>Download</span>
-            <span>Pricing</span>
+            <ul>
+              <li>Product</li>
+              <li>Solutions</li>
+              <li>Resources</li>
+              <li>Download</li>
+              <li>Pricing</li>
+            </ul>
           </nav>
         </div>
         <div css={navigationStyles}>
